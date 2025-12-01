@@ -1,0 +1,16 @@
+{
+  "objections": [
+    {
+      "id": "think-about-it",
+      "label": "\"I need to think about it\"",
+      "category": "Mixed – Timing / Price / Trust",
+      "script": "Totally get it. When most people say they need to think about it, it usually means one of three things: timing, money, or uncertainty it’ll work for them. Which bucket are you in?",
+      "bullets": [
+        "Normalize the objection; don’t fight it.",
+        "Clarify the real bucket before trying to handle it.",
+        "Once they pick a bucket, stay focused there."
+      ],
+      "notes": "Document best follow-ups you hear from other closers here."
+    }
+  ]
+}
