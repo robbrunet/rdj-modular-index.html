@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>RDJ Call Flow v2 – Modular TRUTH Coach</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Inter font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="brand-block">
+        <div class="brand-mark">RT</div>
+        <div class="brand-text">
+          <div class="brand-title">RDJ Call Flow</div>
+          <div class="brand-subtitle">TRUTH • Real Training Pro System</div>
+        </div>
+      </div>
+      <div class="header-right">
+        <nav class="view-tabs">
+          <button class="view-tab active" data-view="script">Script</button>
+          <button class="view-tab" data-view="companies">Companies</button>
+          <button class="view-tab" data-view="objections">Objections</button>
+        </nav>
+        <div class="header-status">
+          <span class="status-dot"></span>
+          <span class="status-text">Ready to Close</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="app-main">
+      <!-- LEFT PANEL -->
+      <section class="left-panel">
+        <h2 class="panel-title" id="leftPanelTitle">Script</h2>
+        <p class="panel-helper" id="leftPanelHelper">
+          Click a line to see live coaching.
+        </p>
+
+        <!-- SCRIPT VIEW -->
+        <ol id="scriptList" class="script-list view-section" data-view="script">
+          <!-- Populated by JS -->
+        </ol>
+
+        <!-- COMPANIES VIEW -->
+        <ul id="companyList" class="list-basic view-section" data-view="companies">
+          <!-- Populated by JS -->
+        </ul>
+
+        <!-- OBJECTIONS VIEW -->
+        <ul id="objectionList" class="list-basic view-section" data-view="objections">
+          <!-- Populated by JS -->
+        </ul>
+      </section>
+
+      <!-- RIGHT PANEL -->
+      <section class="right-panel">
+        <h2 class="panel-title" id="rightPanelTitle">Coaching</h2>
+        <p class="panel-helper" id="rightPanelHelper">
+          Select an item on the left to view guidance.
+        </p>
+
+        <!-- SCRIPT COACH VIEW -->
+        <div id="scriptCoachView" class="coach-view view-section" data-view="script">
+          <div class="coach-line-label" id="coachLineLabel">
+            No line selected
+          </div>
+
+          <div class="coach-tabs" id="coachTabs">
+            <button class="coach-tab active" data-tab="truth">TRUTH</button>
+            <button class="coach-tab" data-tab="values">VALUES</button>
+            <button class="coach-tab" data-tab="mindset">MINDSET</button>
+            <button class="coach-tab" data-tab="habits">HABITS</button>
+            <button class="coach-tab" data-tab="skillset">SKILLSET</button>
+          </div>
+
+          <div class="coach-tab-content" id="coachTabContent">
+            <div class="coach-placeholder">
+              Coaching details will appear here when you select a script line.
+            </div>
+          </div>
+        </div>
+
+        <!-- COMPANY DETAIL VIEW -->
+        <div id="companyCoachView" class="coach-view view-section" data-view="companies">
+          <div class="coach-line-label" id="companyLabel">
+            No company selected
+          </div>
+          <div class="coach-tab-content" id="companyDetail">
+            <div class="coach-placeholder">
+              Select a company on the left to see offer + comp details.
+            </div>
+          </div>
+        </div>
+
+        <!-- OBJECTION DETAIL VIEW -->
+        <div id="objectionCoachView" class="coach-view view-section" data-view="objections">
+          <div class="coach-line-label" id="objectionLabel">
+            No objection selected
+          </div>
+          <div class="coach-tab-content" id="objectionDetail">
+            <div class="coach-placeholder">
+              Select an objection on the left to see handling guidance.
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <div class="footer-left">
+        <span class="footer-label">Mode:</span>
+        <span class="footer-value">Live Call / Practice</span>
+      </div>
+      <div class="footer-right">
+        <span class="footer-label">Framework:</span>
+        <span class="footer-value">TRUTH • Mindset • Habits • Core Values</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
