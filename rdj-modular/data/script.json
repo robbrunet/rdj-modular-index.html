@@ -1,0 +1,332 @@
+{
+  "lines": [
+    {
+      "id": "open-1",
+      "section": "Open",
+      "text": "Hi, (Name)... This is (First Name / Last Name) with Brad Lea's team. How are you doing today?"
+    },
+    {
+      "id": "open-2",
+      "section": "Open",
+      "text": "The reason for my call is because you submitted an application to work with us and I need to do a quick interview. Is now a good time?"
+    },
+    {
+      "id": "open-3",
+      "section": "Open",
+      "text": "Perfect. Just to let you know, this call is being recorded for training and compliance purposes. Is that ok?",
+      "compliance": true
+    },
+
+    {
+      "id": "frame-1",
+      "section": "Frame",
+      "text": "Excellent. I'm just going to ask you a few questions to see if you're a good fit."
+    },
+    {
+      "id": "frame-2",
+      "section": "Frame",
+      "text": "This call can basically go one of three ways."
+    },
+    {
+      "id": "frame-3",
+      "section": "Frame",
+      "text": "One: You're exactly who we're looking for, in which case I'll schedule you for a second interview with Brad or one of the senior managers."
+    },
+    {
+      "id": "frame-4",
+      "section": "Frame",
+      "text": "Two: You're not a fit, and we'll just part friends."
+    },
+    {
+      "id": "frame-5",
+      "section": "Frame",
+      "text": "Three: You have potential but lack some of the skills and experience we're looking for and need to be trained."
+    },
+    {
+      "id": "frame-6",
+      "section": "Frame",
+      "text": "Fair enough?"
+    },
+
+    {
+      "id": "disc-1",
+      "section": "Discovery",
+      "text": "First, what are you currently doing for work?"
+    },
+    {
+      "id": "disc-2",
+      "section": "Discovery",
+      "text": "Why do you want to work with us?"
+    },
+    {
+      "id": "disc-3",
+      "section": "Discovery",
+      "text": "How many hours are you putting in right now?"
+    },
+    {
+      "id": "disc-4",
+      "section": "Discovery",
+      "text": "What is your current monthly income?"
+    },
+    {
+      "id": "disc-5",
+      "section": "Discovery",
+      "text": "What's the most you've ever made in one year?"
+    },
+    {
+      "id": "disc-6",
+      "section": "Discovery",
+      "text": "Tell me about your sales experience."
+    },
+    {
+      "id": "disc-7",
+      "section": "Discovery",
+      "text": "How much have you invested into your own personal development in the last 12 months? Books, courses, events, coaching?"
+    },
+    {
+      "id": "disc-8",
+      "section": "Discovery",
+      "text": "What's the last book or course you completed that you really feel leveled you up?"
+    },
+    {
+      "id": "disc-9",
+      "section": "Discovery",
+      "text": "Have you ever had any issues with upset customers?"
+    },
+    {
+      "id": "disc-10",
+      "section": "Discovery",
+      "text": "Do you have the ability to work remote? Do you have a phone, computer, and a strong internet connection?"
+    },
+    {
+      "id": "disc-11",
+      "section": "Discovery",
+      "text": "Do you have a quiet place to work and are you self-motivated and able to execute consistently without direct supervision or daily reminders?"
+    },
+    {
+      "id": "disc-12",
+      "section": "Discovery",
+      "text": "How many hours a week can you put into this?"
+    },
+    {
+      "id": "disc-13",
+      "section": "Discovery",
+      "text": "How do you feel about commission-only roles?"
+    },
+    {
+      "id": "disc-14",
+      "section": "Discovery",
+      "text": "What drives you every day? What keeps you motivated?"
+    },
+    {
+      "id": "disc-15",
+      "section": "Discovery",
+      "text": "In a year from now, how much money do you want to be making to feel like you're winning?"
+    },
+    {
+      "id": "disc-16",
+      "section": "Discovery",
+      "text": "What would you say is the biggest thing that's held you back from earning the kind of money you want to make?"
+    },
+    {
+      "id": "disc-17",
+      "section": "Discovery",
+      "text": "If you need to be trained, could you handle not making any money for three to four weeks?"
+    },
+    {
+      "id": "disc-18",
+      "section": "Discovery",
+      "text": "Can you commit to always being honest and operating with integrity?"
+    },
+    {
+      "id": "disc-19",
+      "section": "Discovery",
+      "text": "On a scale from one to ten, how would you rate yourself on sales and closing?"
+    },
+    {
+      "id": "disc-20",
+      "section": "Discovery",
+      "text": "How would you rate yourself on communicating with people, networking, building relationships, handling objections, staying focused, problem solving, dealing with stress, using social media, and overall understanding of technology?"
+    },
+    {
+      "id": "disc-21",
+      "section": "Discovery",
+      "text": "How would you rate your confidence, your health and fitness, and your financial health?"
+    },
+
+    {
+      "id": "needs-train-1",
+      "section": "Assess – Needs Training",
+      "text": "Alright, let me shoot you straight. The bad news is, based on what you've told me, you need a little training."
+    },
+    {
+      "id": "needs-train-2",
+      "section": "Assess – Needs Training",
+      "text": "You seem to be coachable and you clearly want to level up, which is key."
+    },
+    {
+      "id": "needs-train-3",
+      "section": "Assess – Needs Training",
+      "text": "But I'm a little hesitant putting you straight into one of the sales positions because leads are pretty expensive these days and Brad will kill me if I put someone in that can't convert them right off the bat.",
+      "compliance": true
+    },
+    {
+      "id": "needs-train-4",
+      "section": "Assess – Needs Training",
+      "text": "We're going to need you to hit the ball out of the park on day one.",
+      "compliance": true
+    },
+    {
+      "id": "needs-train-5",
+      "section": "Assess – Needs Training",
+      "text": "The good news is, I think if Brad trained you, you'd absolutely crush it. Are you willing to be trained in order to get the gig?",
+      "compliance": true
+    },
+
+    {
+      "id": "rt-pitch-1",
+      "section": "Real Training Pitch",
+      "text": "It's called Real Training. Because it is real. It's seriously one of the best training programs out there."
+    },
+    {
+      "id": "rt-pitch-2",
+      "section": "Real Training Pitch",
+      "text": "It has seven levels and it includes live group coaching calls five days a week."
+    },
+    {
+      "id": "rt-pitch-3",
+      "section": "Real Training Pitch",
+      "text": "It focuses on three key areas: mindset, skill set, and habits."
+    },
+    {
+      "id": "rt-pitch-4",
+      "section": "Real Training Pitch",
+      "text": "The mindset work is to get you to think differently and more abundantly. We need you confident, capable, and to change the way you think."
+    },
+    {
+      "id": "rt-pitch-5",
+      "section": "Real Training Pitch",
+      "text": "It will raise your confidence and self-worth more than you would believe. That's crucial if you want to crush it in life."
+    },
+    {
+      "id": "rt-pitch-6",
+      "section": "Real Training Pitch",
+      "text": "The skill sets are to get your skills to an elite level so you can close like a beast in all areas of life, not just sales."
+    },
+    {
+      "id": "rt-pitch-7",
+      "section": "Real Training Pitch",
+      "text": "We focus on sales and closing, communicating, building relationships, personal branding, marketing, and how to leverage AI."
+    },
+    {
+      "id": "rt-pitch-8",
+      "section": "Real Training Pitch",
+      "text": "The habits training teaches you exactly what to do every day so you keep leveling up and can pretty much get anything you want in life."
+    },
+    {
+      "id": "rt-pitch-9",
+      "section": "Real Training Pitch",
+      "text": "(Name), if you do what we train you to do, you're going to be in the best shape you've ever been in, make more money than you ever have, and have the best relationships you've ever had."
+    },
+    {
+      "id": "rt-pitch-10",
+      "section": "Real Training Pitch",
+      "text": "Basically, you'll become the best version of yourself you've ever been. It's a serious program."
+    },
+    {
+      "id": "rt-commit-1",
+      "section": "Real Training Pitch",
+      "text": "If I put you in it, are you willing to put in the time and effort to do it right and get what you deserve?"
+    },
+    {
+      "id": "rt-commit-2",
+      "section": "Real Training Pitch",
+      "text": "Listen, it's not going to be easy. It's a serious training program. Are you sure you really want to do it?"
+    },
+
+    {
+      "id": "deposit-1",
+      "section": "Deposit",
+      "text": "Ok, well listen, it's not a cheap program to put you through. It's very expensive to run."
+    },
+    {
+      "id": "deposit-2",
+      "section": "Deposit",
+      "text": "So here's the catch: it requires a deposit to weed out the quitters."
+    },
+    {
+      "id": "deposit-3",
+      "section": "Deposit",
+      "text": "The deposit is $5,000, and again, it is FULLY REFUNDABLE, assuming you don't quit. Is that going to be a problem?",
+      "compliance": true
+    },
+
+    {
+      "id": "deposit-reframe-1",
+      "section": "Deposit",
+      "text": "Listen, we are willing to train you for free, but this program costs a lot of time and money to put people through."
+    },
+    {
+      "id": "deposit-reframe-2",
+      "section": "Deposit",
+      "text": "We require the deposit to keep people from quitting when it gets a little uncomfortable, because it might get uncomfortable, and that's why it works."
+    },
+    {
+      "id": "deposit-reframe-3",
+      "section": "Deposit",
+      "text": "Why don't you just put the deposit down and make a bet on yourself?"
+    },
+
+    {
+      "id": "no-train-1",
+      "section": "Assess – Doesn't Need Training",
+      "text": "Alright, based on everything you've shared, you actually sound like the exact kind of person we're looking for."
+    },
+    {
+      "id": "no-train-2",
+      "section": "Assess – Doesn't Need Training",
+      "text": "The next step would be a second interview where we go deeper into the role, expectations, and how the compensation works."
+    },
+    {
+      "id": "no-train-3",
+      "section": "Assess – Doesn't Need Training",
+      "text": "Before I line that up, I just want to confirm a couple of things real quick."
+    },
+    {
+      "id": "no-train-4",
+      "section": "Assess – Doesn't Need Training",
+      "text": "You're good with being on 100% commission only in a 1099 role, and you're willing to go through a little training so you can get ramped up and going, correct?"
+    },
+    {
+      "id": "no-train-5",
+      "section": "Assess – Doesn't Need Training",
+      "text": "Perfect. Here's what we'll do: I'm going to email you and cc the senior team to get something coordinated with you."
+    },
+
+    {
+      "id": "not-fit-1",
+      "section": "Not a Fit",
+      "text": "Alright, I appreciate you being candid with me."
+    },
+    {
+      "id": "not-fit-2",
+      "section": "Not a Fit",
+      "text": "Based on everything you've shared, I don't think you're the right fit for what we're looking for on Brad's team right now."
+    },
+    {
+      "id": "not-fit-3",
+      "section": "Not a Fit",
+      "text": "Mainly because this is a high-responsibility, commission-only role that requires a lot of personal accountability, and from what you've said, that doesn't sound like the right match at the moment."
+    },
+    {
+      "id": "not-fit-4",
+      "section": "Not a Fit",
+      "text": "I do appreciate you taking the time to talk today. I'm going to mark this as not a fit so we don't waste your time with follow-ups."
+    },
+    {
+      "id": "not-fit-5",
+      "section": "Not a Fit",
+      "text": "If things change in the future and you've built up more experience or you're in a different situation, you're always welcome to apply again down the road."
+    }
+  ]
+}
