@@ -158,5 +158,525 @@
     },
     "companies": ["rt_core"],
     "objections": []
+  },
+
+  "frame-2": {
+    "truth": {
+      "title": "Frame – Three Paths Overview",
+      "points": [
+        "You’re lowering pressure by giving them all possible outcomes upfront.",
+        "This makes the call feel fair and transparent instead of like a pitch."
+      ]
+    },
+    "values": {
+      "title": "Values – No Hidden Agenda",
+      "points": [
+        "You’re clear that the goal is to see if there’s a fit, not to force a yes.",
+        "People relax when they know you’re willing to tell them no."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Calm Authority",
+      "points": [
+        "You’re in control of the process, not rushing to a close.",
+        "Think: 'I’m here to help them make the right decision, even if it’s no.'"
+      ]
+    },
+    "habits": {
+      "title": "Habits – Same Frame Every Time",
+      "points": [
+        "Deliver the same three-path explanation on every call.",
+        "This consistency makes you smoother and frees up mental bandwidth."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Framing Without Jargon",
+      "points": [
+        "Use simple, conversational language.",
+        "Pause briefly after explaining the three paths so it lands."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["not_sure_yet"]
+  },
+
+  "frame-3": {
+    "truth": {
+      "title": "Path 1 – Perfect Fit",
+      "points": [
+        "You’re future-pacing the best-case scenario: a second, deeper interview.",
+        "Serious people lean in when they hear there’s a higher bar to clear."
+      ]
+    },
+    "values": {
+      "title": "Values – Merit-Based Opportunities",
+      "points": [
+        "Only people who truly fit move forward.",
+        "You’re signaling that you don’t just take anyone with a credit card."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Invite, Don’t Chase",
+      "points": [
+        "You’re describing an opportunity they might earn, not something you’re begging them to take.",
+        "Think: 'They’re applying to work with Brad, not the other way around.'"
+      ]
+    },
+    "habits": {
+      "title": "Habits – Light but Serious Tone",
+      "points": [
+        "Keep your tone positive and confident, not hyped or desperate.",
+        "Smile when mentioning the best-case path; they’ll feel it."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Future Pacing",
+      "points": [
+        "Clearly describe what the next step looks like (2nd interview, deeper dive, comp talk).",
+        "Don’t over-explain here; details come later."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "frame-4": {
+    "truth": {
+      "title": "Path 2 – Not a Fit",
+      "points": [
+        "You normalize 'no' as a possible outcome right up front.",
+        "This builds trust because it proves you’re not afraid to disqualify."
+      ]
+    },
+    "values": {
+      "title": "Values – Respect",
+      "points": [
+        "Even if they’re not a fit, you leave them with dignity.",
+        "You’re modeling how pros exit conversations gracefully."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Abundance",
+      "points": [
+        "There are more applicants than spots; you don’t need to force bad fits.",
+        "Think: 'A clean no is better than a messy maybe.'"
+      ]
+    },
+    "habits": {
+      "title": "Habits – Stay Neutral",
+      "points": [
+        "Don’t sound negative when you mention 'not a fit.'",
+        "Deliver it calmly so they don’t feel judged or defensive."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – De-Pressurizing",
+      "points": [
+        "By explaining this path early, you reduce fear of being sold.",
+        "That makes discovery smoother and more honest."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "frame-5": {
+    "truth": {
+      "title": "Path 3 – Needs Training",
+      "points": [
+        "You plant the idea that training is a valid, respectable option.",
+        "This paves the way for the Real Training offer later in the call."
+      ]
+    },
+    "values": {
+      "title": "Values – Development",
+      "points": [
+        "You position growth as normal, not as something to be ashamed of.",
+        "You’re telling them 'needing coaching' is okay."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Coach, Not Critic",
+      "points": [
+        "You’re evaluating their potential, not picking them apart.",
+        "Think: 'With the right reps, they could become a killer closer.'"
+      ]
+    },
+    "habits": {
+      "title": "Habits – Mention Training Every Time",
+      "points": [
+        "Don’t skip this third path even if you suspect they’re a rockstar.",
+        "You want your brain used to all three outcomes."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Seeding",
+      "points": [
+        "This is where you first seed the concept of structured training.",
+        "Keep it neutral; don’t 'sell' training yet."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "frame-6": {
+    "truth": {
+      "title": "Frame Close – 'Fair Enough?'",
+      "points": [
+        "You’re getting micro-agreement that they’re onboard with the process.",
+        "This makes it easier to guide them later."
+      ]
+    },
+    "values": {
+      "title": "Values – Collaboration",
+      "points": [
+        "You invite them to participate in the structure instead of forcing it.",
+        "People follow better when they’ve said yes to the ground rules."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Calm Confidence",
+      "points": [
+        "Say 'fair enough?' like you already know the answer is yes.",
+        "If they hesitate, you can slow down and re-explain the paths."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Pause and Listen",
+      "points": [
+        "Actually wait for their response; don’t just roll into discovery.",
+        "This pause also lets you reset your own focus."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Check-Ins",
+      "points": [
+        "Use quick check-ins like this throughout the call to keep them with you.",
+        "It’s easier to course-correct early than at the close."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "disc-6": {
+    "truth": {
+      "title": "Sales & PD – Are They a Pro or a Fan?",
+      "points": [
+        "You’re finding out whether they’ve actually sold or just like the idea of sales.",
+        "Personal development history shows how serious they are about growth."
+      ]
+    },
+    "values": {
+      "title": "Values – Ownership",
+      "points": [
+        "People who invest in themselves tend to take responsibility for outcomes.",
+        "You’re filtering for those who already take growth seriously."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Respect the Grind",
+      "points": [
+        "Don’t judge low experience; judge effort and willingness to learn.",
+        "Look for people who have at least tried to bet on themselves."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Ask for Specifics",
+      "points": [
+        "Always follow up with 'What did you actually sell?' and 'How did you do?'",
+        "Ask what they liked or didn’t like about previous roles."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Qualification",
+      "points": [
+        "You’re qualifying their starting point so you can recommend the right path.",
+        "Strong answers here can override weaker areas in other buckets."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "disc-10": {
+    "truth": {
+      "title": "Remote Setup – Can They Actually Work?",
+      "points": [
+        "You’re checking that they have the basics: phone, computer, internet, quiet space.",
+        "If they can’t create a good environment, performance will suffer."
+      ]
+    },
+    "values": {
+      "title": "Values – Professionalism",
+      "points": [
+        "Working from home still requires a professional setup.",
+        "You’re protecting the brand and the prospect experience."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Self-Directed",
+      "points": [
+        "You’re looking for people who can execute without being babysat.",
+        "Ask yourself: 'Would I trust this person to work alone?'"
+      ]
+    },
+    "habits": {
+      "title": "Habits – Confirm Details",
+      "points": [
+        "Always confirm device, internet, and schedule.",
+        "Don’t assume they’re ready just because they say 'remote is fine.'"
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Expectation Setting",
+      "points": [
+        "Remind them this is a performance role, not a 'work when you feel like it' job.",
+        "Lightly test their seriousness about hours and availability."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["commission_only"]
+  },
+
+  "disc-12": {
+    "truth": {
+      "title": "Why & Vision – What’s Really Driving Them",
+      "points": [
+        "You want the emotional 'why' behind their interest.",
+        "Surface-level answers usually mean low staying power."
+      ]
+    },
+    "values": {
+      "title": "Values – Alignment",
+      "points": [
+        "You’re checking whether their goals align with commission-based sales.",
+        "Someone who only wants 'stability' may not love this environment."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Long-Term Thinking",
+      "points": [
+        "You want people who can think 12–18 months ahead, not just to Friday.",
+        "Listen for ownership language vs victim language."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Let Them Talk",
+      "points": [
+        "Ask the question and then shut up.",
+        "If they give a short answer, follow with 'Why is that important to you?'"
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Emotional Discovery",
+      "points": [
+        "This is about emotion, not data.",
+        "You’re looking for a lever you can reference later when they hesitate."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "disc-14": {
+    "truth": {
+      "title": "Runway – Can They Survive the Ramp-Up?",
+      "points": [
+        "You’re making sure they won’t panic if money doesn’t come in immediately.",
+        "Honest answers here prevent future blow-ups."
+      ]
+    },
+    "values": {
+      "title": "Values – Radical Honesty",
+      "points": [
+        "You want them to tell the truth about their situation.",
+        "You’d rather say 'not now' than put them in a worse spot."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Responsibility",
+      "points": [
+        "They must own their finances and risk tolerance.",
+        "This isn’t about judging them; it’s about protecting them."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Ask It Every Time",
+      "points": [
+        "Never skip the runway question, even if they sound strong.",
+        "This keeps you from pushing people into situations they can’t handle."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Tough Conversations",
+      "points": [
+        "Ask with empathy but directness.",
+        "If they’re tight on runway, you may steer them toward more training first."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "train-1": {
+    "truth": {
+      "title": "Training Bridge – Shoot Them Straight",
+      "points": [
+        "You’re being honest that they’re not ready to crush it on day one.",
+        "You frame this as a performance issue, not a character flaw."
+      ]
+    },
+    "values": {
+      "title": "Values – Protecting the Brand & Leads",
+      "points": [
+        "Leads are expensive; you respect the pipeline.",
+        "You’re not willing to throw a rookie into live fire without support."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Coach, Not Judge",
+      "points": [
+        "Think: 'You can absolutely get there; you just need reps and direction.'",
+        "Deliver the feedback with belief, not criticism."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Always Offer a Path",
+      "points": [
+        "Never just say 'you’re not ready' without giving a way forward.",
+        "Training is the path for people with potential."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Framing Gaps as Fixable",
+      "points": [
+        "Make it clear that their weaknesses are trainable skills.",
+        "This keeps them encouraged instead of deflated."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["training_cost", "not_sure_yet"]
+  },
+
+  "deposit-1": {
+    "truth": {
+      "title": "Deposit Setup – Why There’s a Cost",
+      "points": [
+        "You’re explaining that the program is real, structured, and not cheap to run.",
+        "You use the deposit to separate serious people from dabblers."
+      ]
+    },
+    "values": {
+      "title": "Values – Commitment",
+      "points": [
+        "You only want people who are willing to back themselves.",
+        "A little skin in the game means they’ll show up differently."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Bet on Yourself",
+      "points": [
+        "You want them thinking of the deposit as a commitment to their future self.",
+        "People who won’t bet on themselves rarely do the work."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Say It Calmly",
+      "points": [
+        "Deliver the deposit explanation like it’s standard (because it is).",
+        "Don’t flinch or oversell; just state it plainly."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Pre-Handling Money Objections",
+      "points": [
+        "By explaining the 'why' behind the deposit, you weaken objections later.",
+        "This is framing, not pressure."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["money_worried"]
+  },
+
+  "deposit-2": {
+    "truth": {
+      "title": "Deposit – Fully Refundable as Long as You Don’t Quit",
+      "points": [
+        "This line removes most of the risk in their mind.",
+        "It also reinforces that quitting is the only way they truly lose."
+      ]
+    },
+    "values": {
+      "title": "Values – Fairness",
+      "points": [
+        "You’re telling them 'If you show up and do the work, you won’t lose your deposit.'",
+        "This is about mutual commitment, not trapping them."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Shared Risk",
+      "points": [
+        "You’re basically saying, 'We’ll invest in you if you invest in you.'",
+        "It’s a partnership, not a one-sided deal."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Emphasize 'Don’t Quit'",
+      "points": [
+        "Put a tiny bit of weight on 'as long as you don’t quit.'",
+        "You’re setting the expectation that they’ll finish what they start."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Risk Reversal",
+      "points": [
+        "Use this to calm fear, then move straight into logistics.",
+        "Don’t linger so long that they overthink it."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["money_worried", "need_to_think"]
+  },
+
+  "nofit-1": {
+    "truth": {
+      "title": "Not a Fit – Clean Exit",
+      "points": [
+        "You’re protecting both them and the brand by being honest.",
+        "A respectful no can still leave the door open for later."
+      ]
+    },
+    "values": {
+      "title": "Values – Integrity Over Commission",
+      "points": [
+        "You’d rather lose a potential sale than put the wrong person in the wrong seat.",
+        "This is how you build a long-term reputation."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Abundance & Standards",
+      "points": [
+        "You’re not desperate; you’re selective.",
+        "Saying no to the wrong people makes space for the right ones."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Thank Them",
+      "points": [
+        "Always thank them for their time and candor.",
+        "Log clear notes so they aren’t accidentally chased later."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Graceful Close",
+      "points": [
+        "Deliver the no calmly and kindly, without over-explaining.",
+        "Offer a soft door like 'If things change, you’re welcome to reapply.'"
+      ]
+    },
+    "companies": [],
+    "objections": []
   }
 }
