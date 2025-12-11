@@ -10,6 +10,17 @@ let coachingData = {
 let companiesData = [];
 let objectionsData = [];
 
+// Bucket mapping for discovery
+const bucketMap = {
+  work: ["disc-1", "disc-2", "disc-3", "disc-4", "disc-5"],
+  sales: ["disc-6", "disc-7", "disc-8", "disc-9"],
+  remote: ["disc-10", "disc-11"],
+  why: ["disc-12", "disc-13"],
+  runway: ["disc-14", "disc-15", "disc-16"],
+};
+
+let currentBucket = "all";
+
 let activeView = "script"; // "script" | "companies" | "objections"
 let activeLineId = null;
 let activeTabKey = "truth";
@@ -25,6 +36,7 @@ const leftPanelHelperEl = document.getElementById("leftPanelHelper");
 const rightPanelTitleEl = document.getElementById("rightPanelTitle");
 const rightPanelHelperEl = document.getElementById("rightPanelHelper");
 
+const bucketFiltersEl = document.getElementById("bucket-filters");
 const scriptListEl = document.getElementById("scriptList");
 const companyListEl = document.getElementById("companyList");
 const objectionListEl = document.getElementById("objectionList");
@@ -89,6 +101,8 @@ async function init() {
   } catch (err) {
     console.error("Error loading data:", err);
   }
+
+  setupBucketFilters();
 
   // View tab handlers
   viewTabs.forEach((btn) => {
@@ -167,13 +181,24 @@ function updateView(viewKey) {
 // ===== SCRIPT VIEW =====
 function renderScript() {
   scriptListEl.innerHTML = "";
-  scriptData.forEach((line) => {
+  let linesToRender = scriptData;
+
+  if (currentBucket !== "all") {
+    const ids = new Set(bucketMap[currentBucket] || []);
+    linesToRender = scriptData.filter((line) => ids.has(line.id));
+  }
+
+  linesToRender.forEach((line) => {
     const li = document.createElement("li");
     li.className = "script-line";
     li.dataset.lineId = line.id;
 
     if (line.compliance) {
       li.classList.add("compliance-line");
+    }
+
+    if (activeLineId === line.id) {
+      li.classList.add("active");
     }
 
     const sectionTag = document.createElement("span");
@@ -189,6 +214,23 @@ function renderScript() {
     li.addEventListener("click", () => handleLineClick(line.id));
 
     scriptListEl.appendChild(li);
+  });
+}
+
+function setupBucketFilters() {
+  if (!bucketFiltersEl) return;
+
+  const buttons = bucketFiltersEl.querySelectorAll(".bucket-btn");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      currentBucket = btn.getAttribute("data-bucket") || "all";
+
+      renderScript();
+    });
   });
 }
 

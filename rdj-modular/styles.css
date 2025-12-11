@@ -178,6 +178,42 @@ body {
   color: var(--rt-slate);
 }
 
+/* BUCKET FILTERS */
+
+.bucket-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 12px;
+}
+
+.bucket-filters.view-section.active {
+  display: flex;
+}
+
+.bucket-btn {
+  border: 1px solid var(--rt-border);
+  background: #f9f9fb;
+  color: var(--rt-black);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.12s ease, border-color 0.12s ease,
+    color 0.12s ease;
+}
+
+.bucket-btn:hover {
+  background-color: #f1f1f5;
+}
+
+.bucket-btn.active {
+  background-color: #fefbf3;
+  border-color: var(--rt-gold);
+  color: var(--rt-black);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
 /* VIEW SECTION TOGGLING */
 
 .view-section {
