@@ -73,23 +73,25 @@ async function init() {
 
 // ===== DATA LOADING =====
 async function loadData() {
-  try {
-    const [scriptRes, truthRes, companiesRes, objectionsRes] = await Promise.all([
-      fetch("data/script.json"),
-      fetch("data/truth.json"),
-      fetch("data/companies.json"),
-      fetch("data/objections.json"),
-    ]);
+  const [scriptRes, truthRes, companiesRes, objectionsRes] = await Promise.all([
+    fetch("./data/script.json"),
+    fetch("./data/truth.json"),
+    fetch("./data/companies.json"),
+    fetch("./data/objections.json"),
+  ]);
 
-    const scriptJson = await scriptRes.json();
-    scriptLines = scriptJson.lines || [];
+  const scriptJson = await scriptRes.json();
+  scriptLines = scriptJson.lines || [];
 
-    truthMap = await truthRes.json();
-    companiesMap = await companiesRes.json();
-    objectionsMap = await objectionsRes.json();
-  } catch (err) {
-    console.error("Error loading data", err);
-  }
+  truthMap = await truthRes.json();
+  companiesMap = await companiesRes.json();
+  objectionsMap = await objectionsRes.json();
+
+  renderScriptList();
+}
+
+function renderScriptList() {
+  renderScript();
 }
 
 // ===== VIEW SWITCHING =====
@@ -203,7 +205,16 @@ function setupBucketFilters() {
 
 function selectLine(lineId) {
   currentLineId = lineId;
+  highlightSelectedLine(lineId);
+  updateCoachingPanel(lineId);
+  updateCompanyPanel(lineId);
+  updateObjectionsPanel(lineId);
+  if (typeof scrollLineIntoView === "function") {
+    scrollLineIntoView(lineId);
+  }
+}
 
+function highlightSelectedLine(lineId) {
   document.querySelectorAll(".script-line").forEach((el) => {
     el.classList.toggle("active", el.dataset.lineId === lineId);
   });
@@ -212,9 +223,6 @@ function selectLine(lineId) {
   if (!line) return;
 
   coachLineLabelEl.textContent = line.text;
-  updateCoachingPanel(lineId);
-  updateCompanyPanel(lineId);
-  updateObjectionsPanel(lineId);
 }
 
 // ===== COACHING =====
@@ -273,31 +281,32 @@ function renderCompanies() {
 }
 
 function updateCompanyPanel(lineId) {
-  const data = truthMap[lineId];
+  const panel = document.getElementById("company-panel-body");
+  if (!panel) return;
 
-  if (!data || !data.companies || data.companies.length === 0) {
-    companyPanelBodyEl.innerHTML =
-      '<p class="coach-placeholder">No company selected<br><small>Select a script line that references a company.</small></p>';
+  const truthEntry = truthMap[lineId];
+  if (!truthEntry || !truthEntry.companies || truthEntry.companies.length === 0) {
+    panel.innerHTML = `<p class="coach-placeholder">No company selected</p>`;
     return;
   }
 
-  const html = data.companies
+  const cards = truthEntry.companies
     .map((id) => companiesMap[id])
     .filter(Boolean)
     .map(
       (c) => `
-        <div class="company-card">
-          <h3>${c.name}</h3>
-          <p class="company-headline">${c.headline}</p>
-          <p class="company-comp"><strong>Comp:</strong> ${c.comp}</p>
-          <ul>${(c.bullets || []).map((b) => `<li>${b}</li>`).join("")}</ul>
-        </div>
-      `
+      <div class="company-card">
+        <div class="company-name">${c.name}</div>
+        <p>${c.headline}</p>
+        <ul>
+          ${c.bullets.map((b) => `<li>${b}</li>`).join("")}
+        </ul>
+      </div>
+    `
     )
     .join("");
 
-  companyPanelBodyEl.innerHTML = html;
-  activeCompanyId = data.companies[0];
+  panel.innerHTML = cards;
 }
 
 function handleCompanyClick(companyId) {
@@ -361,29 +370,33 @@ function renderObjections() {
 }
 
 function updateObjectionsPanel(lineId) {
-  const data = truthMap[lineId];
+  const panel = document.getElementById("objections-panel-body");
+  if (!panel) return;
 
-  if (!data || !data.objections || data.objections.length === 0) {
-    objectionPanelBodyEl.innerHTML =
-      '<p class="coach-placeholder">No objection selected<br><small>Select a script line where an objection is likely to show up.</small></p>';
+  const truthEntry = truthMap[lineId];
+
+  if (!truthEntry || !Array.isArray(truthEntry.objections) || truthEntry.objections.length === 0) {
+    panel.innerHTML = `
+      <p class="coach-placeholder">
+        No objection selected<br>
+        <small>Select a script line where an objection is likely to show up.</small>
+      </p>
+    `;
     return;
   }
 
-  const html = data.objections
-    .map((id) => objectionsMap[id])
+  const cards = truthEntry.objections
+    .map(id => objectionsMap[id])
     .filter(Boolean)
-    .map(
-      (o) => `
-        <div class="objection-card">
-          <strong>${o.label}</strong>
-          <p>${(o.script || []).join(" ")}</p>
-        </div>
-      `
-    )
+    .map(o => `
+      <div class="objection-card">
+        <div class="objection-label">${o.label}</div>
+        <p class="objection-script">${o.script.join(" ")}</p>
+      </div>
+    `)
     .join("");
 
-  objectionPanelBodyEl.innerHTML = html;
-  activeObjectionId = data.objections[0];
+  panel.innerHTML = cards;
 }
 
 function handleObjectionClick(objectionId) {
