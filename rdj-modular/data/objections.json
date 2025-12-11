@@ -13,9 +13,9 @@
     "id": "not_sure_yet",
     "label": "I’m just not sure yet.",
     "script": [
-      "Totally makes sense — you shouldn't be sure yet.",
-      "That’s the point of this call: to get you clarity before making decisions.",
-      "Let’s walk through where you're at and see if this even makes sense."
+      "Totally get it — you shouldn’t be sure yet.",
+      "That’s why we’re doing this call, so you can get clarity before making any decisions.",
+      "Let’s walk through where you’re at and what you want, then we’ll see if it even makes sense to move forward."
     ]
   },
 
@@ -23,11 +23,10 @@
     "id": "money_worried",
     "label": "I’m worried about the money.",
     "script": [
-      "Totally fair — most people aren’t sitting on extra cash.",
-      "Let me ask you something real quick:",
-      "Is this more 'I literally don't have it,' or 'I have it but I'm not sure if this is the right place to put it?',",
-      "If it's the second one, we can walk through what you actually get and whether it lines up with your goals.",
-      "If it’s the first, then we may need to zoom out and find a plan that doesn’t stretch you too thin."
+      "I hear you — most people I talk to aren’t sitting on a pile of extra cash.",
+      "Let me ask you this: are we talking more about, 'I literally don’t have it,' or 'I have it but I’m not sure if this is where I should put it?'",
+      "If it’s the second one, we can walk through what you actually get and whether it lines up with the goals you told me about.",
+      "If it’s the first one, we might need to zoom out and get you a plan that doesn’t bury you."
     ]
   },
 
@@ -35,10 +34,10 @@
     "id": "training_cost",
     "label": "Why does the training cost money?",
     "script": [
-      "Good question — if this were just a bunch of videos in a portal, I'd agree with you.",
-      "But this is real coaching, with live calls, curriculum, and skill development.",
-      "This program exists to help you increase your income — not sell you information.",
-      "If you put in the reps, it returns far more than it costs."
+      "Good question — if it was just some videos in a portal, I’d agree with you.",
+      "But this is a real, structured program with live coaching, curriculum, and support — it costs money to run it right.",
+      "The way we look at it is simple: if you do the work, the program should pay you back many times over in the form of skills and income.",
+      "If you’re not planning to use it, then you definitely shouldn’t buy it — this is for people who actually want to level up."
     ]
   },
 
@@ -46,10 +45,10 @@
     "id": "commission_only",
     "label": "I’m nervous about commission-only.",
     "script": [
-      "Totally understandable — most people were raised to think salary equals safety.",
-      "Commission simply means you get paid what you're worth, not what a company thinks you're worth.",
-      "It requires a little courage and a lot of skill — which is exactly what we help build.",
-      "If the idea of performance-based pay excites you even a little, that’s a good sign."
+      "Totally makes sense — most people were raised to believe a salary is 'safety.'",
+      "The tradeoff is that with commission, there’s no ceiling. You get paid directly for your performance, not just time.",
+      "This only works if you’re willing to treat yourself like a business and build skills.",
+      "If that excites you more than it scares you, you’re probably in the right place. If it terrifies you, we might need to pump the brakes."
     ]
   },
 
@@ -57,10 +56,10 @@
     "id": "need_to_think",
     "label": "I need to think about it.",
     "script": [
-      "Totally fair — anything meaningful is worth thinking about.",
-      "Just so I follow up on the right thing, when you say 'think about it,' what will you actually be thinking through?",
-      "Usually it’s one of three things: the money, the time, or 'will this work for me?',",
-      "Which one is it for you so we can cut through the fog?"
+      "Totally fair — any real decision is worth thinking about.",
+      "Just so I don’t follow up on something that isn’t real, when you say 'think about it,' what exactly are you going to be thinking through?",
+      "Usually when people say that, it’s one of three things: the money, the time, or 'Is this really going to work for me?'",
+      "Which one is it for you, so we can talk about the real thing instead of the fog?"
     ]
   }
 }

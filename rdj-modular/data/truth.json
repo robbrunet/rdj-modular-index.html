@@ -640,6 +640,86 @@
     "objections": ["money_worried", "need_to_think"]
   },
 
+  "rt-pitch-1": {
+    "truth": {
+      "title": "Real Training – Why It Exists",
+      "points": [
+        "You’re positioning this as the solution to the exact gaps you just uncovered.",
+        "This isn’t a random course; it’s a bridge between where they are and the role they want."
+      ]
+    },
+    "values": {
+      "title": "Values – Results Over Hype",
+      "points": [
+        "You’re selling the outcome (skills, income, confidence), not just access to content.",
+        "You want them in the program only if they plan to use it."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Investment, Not Expense",
+      "points": [
+        "You want them thinking 'what will this return?' not just 'what does this cost?'",
+        "People who win long-term see training as fuel, not a bill."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Connect Back to Discovery",
+      "points": [
+        "When you present Real Training, tie it back to the problems they told you they have.",
+        "The more specific you are, the less generic it feels."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Framing Training With Belief",
+      "points": [
+        "Deliver this part with calm certainty, not hype.",
+        "You’re inviting them into something you’d be proud to put your name on."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["training_cost", "not_sure_yet"]
+  },
+
+  "role-path-2": {
+    "truth": {
+      "title": "2nd Interview – Commission Reality Check",
+      "points": [
+        "You’re making sure they understand this isn’t a salary job.",
+        "Better to lose them now than have them freak out later."
+      ]
+    },
+    "values": {
+      "title": "Values – Radical Clarity",
+      "points": [
+        "You don’t hide the commission-only part behind fine print.",
+        "You want people who are excited by performance pay, not surprised by it."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Filter, Don’t Convince",
+      "points": [
+        "You’re not trying to talk them into commission-only.",
+        "If they truly hate it, they probably won’t last anyway."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Ask and Pause",
+      "points": [
+        "Ask if they’re good with commission-only, then shut up and listen.",
+        "Their tone matters more than the exact words."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Framing Upside and Responsibility",
+      "points": [
+        "You can briefly remind them there’s no ceiling on earnings.",
+        "But don’t oversell; this is about making sure they understand the deal."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["commission_only", "need_to_think"]
+  },
+
   "nofit-1": {
     "truth": {
       "title": "Not a Fit – Clean Exit",
