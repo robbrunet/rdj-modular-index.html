@@ -383,6 +383,66 @@ body {
   overflow-y: auto;
 }
 
+.info-panels {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.info-panel {
+  border: 1px solid var(--rt-border);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  background: var(--rt-bg-muted);
+}
+
+.info-panel-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--rt-black-soft);
+  margin-bottom: 6px;
+}
+
+.info-panel-body {
+  font-size: 12px;
+  color: var(--rt-slate);
+}
+
+.company-card,
+.objection-card {
+  background: var(--rt-white);
+  border: 1px solid var(--rt-border);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  margin-bottom: 8px;
+}
+
+.company-card h3,
+.objection-card strong {
+  margin: 0 0 6px;
+  color: var(--rt-black);
+}
+
+.company-headline,
+.company-comp,
+.objection-card p {
+  margin: 0 0 6px;
+  color: var(--rt-slate);
+  line-height: 1.4;
+}
+
+.company-card ul {
+  padding-left: 16px;
+  margin: 0;
+}
+
+.company-card li {
+  margin-bottom: 4px;
+}
+
 .coach-section {
   margin-bottom: 8px;
 }
