@@ -8,12 +8,58 @@
       "If you’d rather not be recorded, we can keep going without it or reschedule — what feels best?"
     ]
   },
+
   "not_sure_yet": {
     "id": "not_sure_yet",
     "label": "I’m just not sure yet…",
     "script": [
-      "That’s exactly why we do this call — so you can get clarity before making any decisions.",
+      "Totally get it — you shouldn’t be sure yet.",
+      "That’s why we’re doing this call, so you can get clarity before making any decisions.",
       "Let’s walk through where you’re at and what you want, then we’ll see if it even makes sense to move forward."
+    ]
+  },
+
+  "money_worried": {
+    "id": "money_worried",
+    "label": "I’m worried about the money.",
+    "script": [
+      "I hear you — most people I talk to aren’t sitting on a pile of extra cash.",
+      "Let me ask you this: are we talking more about, 'I literally don’t have it,' or 'I have it but I’m not sure if this is where I should put it?'",
+      "If it’s the second one, we can walk through what you actually get and whether it lines up with the goals you told me about.",
+      "If it’s the first one, we might need to zoom out and get you a plan that doesn’t bury you."
+    ]
+  },
+
+  "training_cost": {
+    "id": "training_cost",
+    "label": "Why does the training cost money?",
+    "script": [
+      "Good question — if it was just some videos in a portal, I’d agree with you.",
+      "But this is a real, structured program with live coaching, curriculum, and support — it costs money to run it right.",
+      "The way we look at it is simple: if you do the work, the program should pay you back many times over in the form of skills and income.",
+      "If you’re not planning to use it, then you definitely shouldn’t buy it — this is for people who actually want to level up."
+    ]
+  },
+
+  "commission_only": {
+    "id": "commission_only",
+    "label": "I’m nervous about commission-only.",
+    "script": [
+      "Totally makes sense — most people were raised to believe a salary is 'safety.'",
+      "The tradeoff is that with commission, there’s no ceiling. You get paid directly for your performance, not just time.",
+      "This only works if you’re willing to treat yourself like a business and build skills.",
+      "If that excites you more than it scares you, you’re probably in the right place. If it terrifies you, we might need to pump the brakes."
+    ]
+  },
+
+  "need_to_think": {
+    "id": "need_to_think",
+    "label": "I need to think about it.",
+    "script": [
+      "Totally fair — any real decision is worth thinking about.",
+      "Just so I don’t follow up on something that isn’t real, when you say 'think about it,' what exactly are you going to be thinking through?",
+      "Usually when people say that, it’s one of three things: the money, the time, or 'Is this really going to work for me?'",
+      "Which one is it for you, so we can talk about the real thing instead of the fog?"
     ]
   }
 }
