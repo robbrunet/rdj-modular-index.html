@@ -1,0 +1,162 @@
+{
+  "open-1": {
+    "truth": {
+      "title": "Opening – Set the Frame Fast",
+      "points": [
+        "Smile before you speak; they can hear it.",
+        "Say their name clearly and confidently.",
+        "Sound like you expected them to pick up — no apology energy."
+      ]
+    },
+    "values": {
+      "title": "Values – Respect Their Time",
+      "points": [
+        "You’re calling because they requested info.",
+        "Be direct, clear, and calm from the first second."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – You’re the Selector",
+      "points": [
+        "You’re not begging for their time; you’re screening for a good fit.",
+        "Think: “I’m here to see if this is a win–win.”"
+      ]
+    },
+    "habits": {
+      "title": "Habits – Consistent Openings",
+      "points": [
+        "Use the same opener every time until it’s automatic.",
+        "Track dials → conversations → interviews."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – First Impressions",
+      "points": [
+        "Clear pacing, no filler words.",
+        "Match their energy but always lead with certainty."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  },
+
+  "open-3": {
+    "truth": {
+      "title": "Compliance – Don’t Rush It",
+      "points": [
+        "Deliver this calm and matter-of-fact, like it’s no big deal.",
+        "Pause and wait for a clear 'yes' before moving on.",
+        "If they hesitate, reassure them it’s standard."
+      ]
+    },
+    "values": {
+      "title": "Values – Transparency",
+      "points": [
+        "You’re modeling honesty and professionalism from the jump.",
+        "Never skip the recording line, even if you’re in a hurry."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Pros Like Structure",
+      "points": [
+        "Serious people appreciate clear, compliant processes.",
+        "Assume they’ll say yes unless they explicitly object."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Same Wording Every Time",
+      "points": [
+        "Use the same sentence each call to reduce mental load.",
+        "Let yourself get bored of it — that means it’s automatic."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Handling Recording Objections",
+      "points": [
+        "Acknowledge concern, explain the why, offer a simple choice."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["recording_nervous"]
+  },
+
+  "frame-1": {
+    "truth": {
+      "title": "Frame – Why You’re Asking Questions",
+      "points": [
+        "Set expectation that this is an interview, not a sales pitch.",
+        "Calms them down so discovery doesn’t feel random."
+      ]
+    },
+    "values": {
+      "title": "Values – Honesty About Fit",
+      "points": [
+        "You’re not trying to shove them into a role that doesn’t fit.",
+        "You’re willing to tell them no if it’s not right."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – You’re Evaluating",
+      "points": [
+        "You’re here to see if they qualify, not to win them over.",
+        "The less attached you are, the better the call goes."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Use This Same Frame",
+      "points": [
+        "Don’t improvise here; use the same framing every call.",
+        "This becomes your mental “start of interview” switch."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Simple Language",
+      "points": [
+        "Keep the explanation short and conversational.",
+        "End with a light 'fair enough?' to invite buy-in."
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": ["not_sure_yet"]
+  },
+
+  "disc-1": {
+    "truth": {
+      "title": "Work & Money – Big Picture",
+      "points": [
+        "You’re getting context: what they do now and why they’re looking.",
+        "Listen more than you talk; save coaching for later."
+      ]
+    },
+    "values": {
+      "title": "Values – Curiosity First",
+      "points": [
+        "Don’t judge their current situation.",
+        "Your job is to understand, not impress."
+      ]
+    },
+    "mindset": {
+      "title": "Mindset – Detective Mode",
+      "points": [
+        "Be genuinely curious about how they think and operate.",
+        "Assume there’s more under the surface — ask follow-ups."
+      ]
+    },
+    "habits": {
+      "title": "Habits – Always Start Here",
+      "points": [
+        "First bucket is always work & money; don’t skip it.",
+        "Take quick notes as they talk."
+      ]
+    },
+    "skillset": {
+      "title": "Skillset – Open Questions",
+      "points": [
+        "Use questions that can’t be answered with just yes/no.",
+        "Follow up with 'Tell me more about that.'"
+      ]
+    },
+    "companies": ["rt_core"],
+    "objections": []
+  }
+}

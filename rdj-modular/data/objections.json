@@ -1,0 +1,19 @@
+{
+  "recording_nervous": {
+    "id": "recording_nervous",
+    "label": "I’m not comfortable being recorded.",
+    "script": [
+      "Totally fair, thanks for saying that.",
+      "We record calls strictly for training and quality so we can help people better.",
+      "If you’d rather not be recorded, we can keep going without it or reschedule — what feels best?"
+    ]
+  },
+  "not_sure_yet": {
+    "id": "not_sure_yet",
+    "label": "I’m just not sure yet…",
+    "script": [
+      "That’s exactly why we do this call — so you can get clarity before making any decisions.",
+      "Let’s walk through where you’re at and what you want, then we’ll see if it even makes sense to move forward."
+    ]
+  }
+}

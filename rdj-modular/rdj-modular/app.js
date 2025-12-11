@@ -1,14 +1,43 @@
 // ===== GLOBAL STATE =====
-let scriptData = [];
-let coachingData = {
-  truth: {},
-  values: {},
-  mindset: {},
-  habits: {},
-  skillset: {}
-};
-let companiesData = [];
-let objectionsData = [];
+let scriptLines = [];
+let truthMap = {};
+let companiesMap = {};
+let objectionsMap = {};
+
+let currentBucket = "all";
+let activeView = "script";
+let currentLineId = null;
+let currentCoachTab = "truth";
+let activeCompanyId = null;
+let activeObjectionId = null;
+
+// ===== DOM REFS =====
+const viewTabs = document.querySelectorAll(".view-tab");
+const viewSections = document.querySelectorAll(".view-section");
+const coachViews = document.querySelectorAll(".coach-view");
+const bucketFiltersEl = document.getElementById("bucket-filters");
+
+const leftPanelTitleEl = document.getElementById("leftPanelTitle");
+const leftPanelHelperEl = document.getElementById("leftPanelHelper");
+const rightPanelTitleEl = document.getElementById("rightPanelTitle");
+const rightPanelHelperEl = document.getElementById("rightPanelHelper");
+
+const scriptListEl = document.getElementById("scriptList");
+const companyListEl = document.getElementById("companyList");
+const objectionListEl = document.getElementById("objectionList");
+
+const coachLineLabelEl = document.getElementById("coachLineLabel");
+const coachingPanelEl = document.getElementById("coaching-panel");
+const tabButtons = document.querySelectorAll(".coach-tab");
+
+const companyPanelEl = document.getElementById("company-panel");
+const companyPanelBodyEl = document.getElementById("company-panel-body");
+const objectionPanelEl = document.getElementById("objections-panel");
+const objectionPanelBodyEl = document.getElementById("objections-panel-body");
+const companyLabelEl = document.getElementById("companyLabel");
+const companyDetailEl = document.getElementById("companyDetail");
+const objectionLabelEl = document.getElementById("objectionLabel");
+const objectionDetailEl = document.getElementById("objectionDetail");
 
 // Bucket mapping for discovery
 const bucketMap = {
@@ -19,173 +48,114 @@ const bucketMap = {
   runway: ["disc-14", "disc-15", "disc-16"],
 };
 
-let currentBucket = "all";
-
-let activeView = "script"; // "script" | "companies" | "objections"
-let activeLineId = null;
-let activeTabKey = "truth";
-let activeCompanyId = null;
-let activeObjectionId = null;
-
-// DOM references
-const viewTabs = document.querySelectorAll(".view-tab");
-const viewSections = document.querySelectorAll(".view-section");
-const coachViews = document.querySelectorAll(".coach-view");
-const leftPanelTitleEl = document.getElementById("leftPanelTitle");
-const leftPanelHelperEl = document.getElementById("leftPanelHelper");
-const rightPanelTitleEl = document.getElementById("rightPanelTitle");
-const rightPanelHelperEl = document.getElementById("rightPanelHelper");
-
-const bucketFiltersEl = document.getElementById("bucket-filters");
-const scriptListEl = document.getElementById("scriptList");
-const companyListEl = document.getElementById("companyList");
-const objectionListEl = document.getElementById("objectionList");
-
-const coachLineLabelEl = document.getElementById("coachLineLabel");
-const coachTabContentEl = document.getElementById("coachTabContent");
-const tabButtons = document.querySelectorAll(".coach-tab");
-
-const companyLabelEl = document.getElementById("companyLabel");
-const companyDetailEl = document.getElementById("companyDetail");
-const objectionLabelEl = document.getElementById("objectionLabel");
-const objectionDetailEl = document.getElementById("objectionDetail");
-
 // ===== INIT =====
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", () => {
+  init();
+});
 
 async function init() {
-  try {
-    const [
-      scriptRes,
-      companiesRes,
-      objectionsRes,
-      truthRes,
-      valuesRes,
-      mindsetRes,
-      habitsRes,
-      skillsetRes
-    ] = await Promise.all([
-      fetch("data/script.json"),
-      fetch("data/companies.json"),
-      fetch("data/objections.json"),
-      fetch("data/coaching/truth.json"),
-      fetch("data/coaching/values.json"),
-      fetch("data/coaching/mindset.json"),
-      fetch("data/coaching/habits.json"),
-      fetch("data/coaching/skillset.json")
-    ]);
-
-    const scriptJson = await scriptRes.json();
-    const companiesJson = await companiesRes.json();
-    const objectionsJson = await objectionsRes.json();
-    const truthJson = await truthRes.json();
-    const valuesJson = await valuesRes.json();
-    const mindsetJson = await mindsetRes.json();
-    const habitsJson = await habitsRes.json();
-    const skillsetJson = await skillsetRes.json();
-
-    scriptData = scriptJson.lines || [];
-    companiesData = companiesJson.companies || [];
-    objectionsData = objectionsJson.objections || [];
-    coachingData.truth = truthJson;
-    coachingData.values = valuesJson;
-    coachingData.mindset = mindsetJson;
-    coachingData.habits = habitsJson;
-    coachingData.skillset = skillsetJson;
-
-    renderScript();
-    renderCompanies();
-    renderObjections();
-    updateView("script");
-    renderTabContent();
-  } catch (err) {
-    console.error("Error loading data:", err);
-  }
+  await loadData();
+  renderScript();
+  renderCompanies();
+  renderObjections();
+  updateView("script");
 
   setupBucketFilters();
 
-  // View tab handlers
   viewTabs.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const view = btn.dataset.view;
-      updateView(view);
-    });
+    btn.addEventListener("click", () => updateView(btn.dataset.view));
   });
 
-  // Coaching tab handlers
   tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const tabKey = btn.dataset.tab;
-      setActiveTab(tabKey);
-    });
+    btn.addEventListener("click", () => setCoachTab(btn.dataset.tab));
   });
+}
+
+// ===== DATA LOADING =====
+async function loadData() {
+  try {
+    const [scriptRes, truthRes, companiesRes, objectionsRes] = await Promise.all([
+      fetch("data/script.json"),
+      fetch("data/truth.json"),
+      fetch("data/companies.json"),
+      fetch("data/objections.json"),
+    ]);
+
+    const scriptJson = await scriptRes.json();
+    scriptLines = scriptJson.lines || [];
+
+    truthMap = await truthRes.json();
+    companiesMap = await companiesRes.json();
+    objectionsMap = await objectionsRes.json();
+  } catch (err) {
+    console.error("Error loading data", err);
+  }
 }
 
 // ===== VIEW SWITCHING =====
 function updateView(viewKey) {
   activeView = viewKey;
 
-  // Update header tabs
   viewTabs.forEach((btn) => {
     btn.classList.toggle("active", btn.dataset.view === viewKey);
   });
 
-  // Toggle left panel views
   viewSections.forEach((sec) => {
     sec.classList.toggle("active", sec.dataset.view === viewKey);
   });
 
-  // Toggle right panel coaching views
   coachViews.forEach((cv) => {
     cv.classList.toggle("active", cv.dataset.view === viewKey);
   });
 
-  // Update panel titles/helpers
   if (viewKey === "script") {
     leftPanelTitleEl.textContent = "Script";
     leftPanelHelperEl.textContent = "Click a line to see live coaching.";
     rightPanelTitleEl.textContent = "Coaching";
     rightPanelHelperEl.textContent = "Select a script line to view TRUTH coaching.";
+
+    if (!currentLineId && scriptLines.length > 0) {
+      selectLine(scriptLines[0].id);
+    } else if (currentLineId) {
+      selectLine(currentLineId);
+    }
   } else if (viewKey === "companies") {
     leftPanelTitleEl.textContent = "Companies";
     leftPanelHelperEl.textContent = "Select a company to view offer and comp details.";
     rightPanelTitleEl.textContent = "Company Details";
     rightPanelHelperEl.textContent =
       "Use this to remember each company's structure without touching your script.";
+
+    if (!activeCompanyId) {
+      const firstCompany = Object.keys(companiesMap)[0];
+      if (firstCompany) handleCompanyClick(firstCompany);
+    } else {
+      handleCompanyClick(activeCompanyId);
+    }
   } else if (viewKey === "objections") {
     leftPanelTitleEl.textContent = "Objections";
     leftPanelHelperEl.textContent = "Select an objection pattern to review handling.";
     rightPanelTitleEl.textContent = "Objection Handling";
     rightPanelHelperEl.textContent =
       "Add and refine objection patterns here as you learn from live calls.";
-  }
 
-  // Reset some labels when switching views
-  if (viewKey === "script") {
-    if (!activeLineId && scriptData.length > 0) {
-      handleLineClick(scriptData[0].id);
+    if (!activeObjectionId) {
+      const firstObj = Object.keys(objectionsMap)[0];
+      if (firstObj) handleObjectionClick(firstObj);
     } else {
-      renderTabContent();
+      handleObjectionClick(activeObjectionId);
     }
-  } else if (viewKey === "companies") {
-    companyLabelEl.textContent = activeCompanyId
-      ? companyLabelEl.textContent
-      : "No company selected";
-  } else if (viewKey === "objections") {
-    objectionLabelEl.textContent = activeObjectionId
-      ? objectionLabelEl.textContent
-      : "No objection selected";
   }
 }
 
 // ===== SCRIPT VIEW =====
 function renderScript() {
   scriptListEl.innerHTML = "";
-  let linesToRender = scriptData;
+  let linesToRender = scriptLines;
 
   if (currentBucket !== "all") {
     const ids = new Set(bucketMap[currentBucket] || []);
-    linesToRender = scriptData.filter((line) => ids.has(line.id));
+    linesToRender = scriptLines.filter((line) => ids.has(line.id));
   }
 
   linesToRender.forEach((line) => {
@@ -197,7 +167,7 @@ function renderScript() {
       li.classList.add("compliance-line");
     }
 
-    if (activeLineId === line.id) {
+    if (currentLineId === line.id) {
       li.classList.add("active");
     }
 
@@ -211,7 +181,7 @@ function renderScript() {
     li.appendChild(sectionTag);
     li.appendChild(textSpan);
 
-    li.addEventListener("click", () => handleLineClick(line.id));
+    li.addEventListener("click", () => selectLine(line.id));
 
     scriptListEl.appendChild(li);
   });
@@ -221,114 +191,68 @@ function setupBucketFilters() {
   if (!bucketFiltersEl) return;
 
   const buttons = bucketFiltersEl.querySelectorAll(".bucket-btn");
-
   buttons.forEach((btn) => {
     btn.addEventListener("click", () => {
       buttons.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-
       currentBucket = btn.getAttribute("data-bucket") || "all";
-
       renderScript();
     });
   });
 }
 
-function handleLineClick(lineId) {
-  activeLineId = lineId;
+function selectLine(lineId) {
+  currentLineId = lineId;
 
   document.querySelectorAll(".script-line").forEach((el) => {
     el.classList.toggle("active", el.dataset.lineId === lineId);
   });
 
-  const line = scriptData.find((l) => l.id === lineId);
+  const line = scriptLines.find((l) => l.id === lineId);
   if (!line) return;
 
   coachLineLabelEl.textContent = line.text;
-  setActiveTab(activeTabKey || "truth");
+  updateCoachingPanel(lineId);
+  updateCompanyPanel(lineId);
+  updateObjectionsPanel(lineId);
 }
 
-// ===== COACHING TABS =====
-function setActiveTab(tabKey) {
-  activeTabKey = tabKey;
-
+// ===== COACHING =====
+function setCoachTab(tabKey) {
+  currentCoachTab = tabKey;
   tabButtons.forEach((btn) => {
-    const isActive = btn.dataset.tab === tabKey;
-    btn.classList.toggle("active", isActive);
+    btn.classList.toggle("active", btn.dataset.tab === tabKey);
   });
 
-  renderTabContent();
+  if (currentLineId) {
+    updateCoachingPanel(currentLineId);
+  }
 }
 
-function renderTabContent() {
-  coachTabContentEl.innerHTML = "";
+function updateCoachingPanel(lineId) {
+  const data = truthMap[lineId];
 
-  const line = scriptData.find((l) => l.id === activeLineId);
-  if (!line) {
-    const placeholder = document.createElement("div");
-    placeholder.className = "coach-placeholder";
-    placeholder.textContent =
-      "Select a line on the left to see detailed coaching.";
-    coachTabContentEl.appendChild(placeholder);
+  if (!data || !data[currentCoachTab]) {
+    coachingPanelEl.innerHTML =
+      '<div class="coach-placeholder">Coaching details will appear here when you select a script line.</div>';
     return;
   }
 
-  const coaching = coachingData[activeTabKey]?.[line.id];
-  if (!coaching) {
-    const placeholder = document.createElement("div");
-    placeholder.className = "coach-placeholder";
-    placeholder.textContent = "No coaching data for this tab yet.";
-    coachTabContentEl.appendChild(placeholder);
-    return;
-  }
-
-  const section = document.createElement("div");
-  section.className = "coach-section";
-
-  const title = document.createElement("div");
-  title.className = "coach-section-title";
-  title.textContent = coaching.title || activeTabKey.toUpperCase();
-  section.appendChild(title);
-
-  const body = document.createElement("div");
-  body.className = "coach-section-body";
-
-  if (activeTabKey === "truth") {
-    const parts = [];
-    if (coaching.purpose) {
-      parts.push(`<strong>Purpose:</strong> ${coaching.purpose}`);
-    }
-    if (coaching.why) {
-      parts.push(`<strong>Why it matters:</strong> ${coaching.why}`);
-    }
-    if (coaching.technique && coaching.technique.length) {
-      const listItems = coaching.technique.map((t) => `<li>${t}</li>`).join("");
-      parts.push(`<strong>Technique:</strong><ul>${listItems}</ul>`);
-    }
-    if (coaching.redFlag) {
-      parts.push(
-        `<strong>Red Flag:</strong> <span style="color: var(--rt-danger);">${coaching.redFlag}</span>`
-      );
-    }
-    body.innerHTML = parts.join("<br><br>");
-  } else {
-    if (coaching.points && coaching.points.length) {
-      const listItems = coaching.points.map((p) => `<li>${p}</li>`).join("");
-      body.innerHTML = `<ul>${listItems}</ul>`;
-    } else {
-      body.textContent = "Coaching details coming soon.";
-    }
-  }
-
-  section.appendChild(body);
-  coachTabContentEl.appendChild(section);
+  const entry = data[currentCoachTab];
+  coachingPanelEl.innerHTML = `
+    <h3>${entry.title}</h3>
+    <ul>
+      ${(entry.points || []).map((p) => `<li>${p}</li>`).join("")}
+    </ul>
+  `;
 }
 
-// ===== COMPANIES VIEW =====
+// ===== COMPANIES =====
 function renderCompanies() {
   companyListEl.innerHTML = "";
+  const companies = Object.values(companiesMap);
 
-  companiesData.forEach((c) => {
+  companies.forEach((c) => {
     const li = document.createElement("li");
     li.className = "list-item";
     li.dataset.companyId = c.id;
@@ -339,15 +263,41 @@ function renderCompanies() {
 
     const sub = document.createElement("div");
     sub.className = "list-item-sub";
-    sub.textContent = c.tagline || "";
+    sub.textContent = c.headline || "";
 
     li.appendChild(title);
     li.appendChild(sub);
-
     li.addEventListener("click", () => handleCompanyClick(c.id));
-
     companyListEl.appendChild(li);
   });
+}
+
+function updateCompanyPanel(lineId) {
+  const data = truthMap[lineId];
+
+  if (!data || !data.companies || data.companies.length === 0) {
+    companyPanelBodyEl.innerHTML =
+      '<p class="coach-placeholder">No company selected<br><small>Select a script line that references a company.</small></p>';
+    return;
+  }
+
+  const html = data.companies
+    .map((id) => companiesMap[id])
+    .filter(Boolean)
+    .map(
+      (c) => `
+        <div class="company-card">
+          <h3>${c.name}</h3>
+          <p class="company-headline">${c.headline}</p>
+          <p class="company-comp"><strong>Comp:</strong> ${c.comp}</p>
+          <ul>${(c.bullets || []).map((b) => `<li>${b}</li>`).join("")}</ul>
+        </div>
+      `
+    )
+    .join("");
+
+  companyPanelBodyEl.innerHTML = html;
+  activeCompanyId = data.companies[0];
 }
 
 function handleCompanyClick(companyId) {
@@ -357,70 +307,45 @@ function handleCompanyClick(companyId) {
     el.classList.toggle("active", el.dataset.companyId === companyId);
   });
 
-  const company = companiesData.find((c) => c.id === companyId);
+  const company = companiesMap[companyId];
   if (!company) return;
 
   companyLabelEl.textContent = company.name;
-  renderCompanyDetail(company);
-}
-
-function renderCompanyDetail(company) {
-  companyDetailEl.innerHTML = "";
 
   const parts = [];
+  parts.push(
+    `<div class="coach-section">
+       <div class="coach-section-title">Headline</div>
+       <div class="coach-section-body">${company.headline}</div>
+     </div>`
+  );
 
-  if (company.overview) {
+  parts.push(
+    `<div class="coach-section">
+       <div class="coach-section-title">Comp</div>
+       <div class="coach-section-body">${company.comp}</div>
+     </div>`
+  );
+
+  if (company.bullets && company.bullets.length) {
+    const items = company.bullets.map((b) => `<li>${b}</li>`).join("");
     parts.push(
       `<div class="coach-section">
-         <div class="coach-section-title">Overview</div>
-         <div class="coach-section-body">${company.overview}</div>
+         <div class="coach-section-title">Highlights</div>
+         <div class="coach-section-body"><ul>${items}</ul></div>
        </div>`
     );
   }
 
-  if (company.compensation) {
-    const items = company.compensation.map((c) => `<li>${c}</li>`).join("");
-    parts.push(
-      `<div class="coach-section">
-         <div class="coach-section-title">Compensation Highlights</div>
-         <div class="coach-section-body">
-           <ul>${items}</ul>
-         </div>
-       </div>`
-    );
-  }
-
-  if (company.requirements) {
-    const items = company.requirements.map((r) => `<li>${r}</li>`).join("");
-    parts.push(
-      `<div class="coach-section">
-         <div class="coach-section-title">Ideal Candidate / Requirements</div>
-         <div class="coach-section-body">
-           <ul>${items}</ul>
-         </div>
-       </div>`
-    );
-  }
-
-  if (company.notes) {
-    parts.push(
-      `<div class="coach-section">
-         <div class="coach-section-title">Notes</div>
-         <div class="coach-section-body">${company.notes}</div>
-       </div>`
-    );
-  }
-
-  companyDetailEl.innerHTML =
-    parts.join("") ||
-    '<div class="coach-placeholder">No details yet. Add them in data/companies.json.</div>';
+  companyDetailEl.innerHTML = parts.join("");
 }
 
-// ===== OBJECTIONS VIEW =====
+// ===== OBJECTIONS =====
 function renderObjections() {
   objectionListEl.innerHTML = "";
+  const objections = Object.values(objectionsMap);
 
-  objectionsData.forEach((obj) => {
+  objections.forEach((obj) => {
     const li = document.createElement("li");
     li.className = "list-item";
     li.dataset.objectionId = obj.id;
@@ -429,17 +354,36 @@ function renderObjections() {
     title.className = "list-item-title";
     title.textContent = obj.label;
 
-    const sub = document.createElement("div");
-    sub.className = "list-item-sub";
-    sub.textContent = obj.category || "";
-
     li.appendChild(title);
-    li.appendChild(sub);
-
     li.addEventListener("click", () => handleObjectionClick(obj.id));
-
     objectionListEl.appendChild(li);
   });
+}
+
+function updateObjectionsPanel(lineId) {
+  const data = truthMap[lineId];
+
+  if (!data || !data.objections || data.objections.length === 0) {
+    objectionPanelBodyEl.innerHTML =
+      '<p class="coach-placeholder">No objection selected<br><small>Select a script line where an objection is likely to show up.</small></p>';
+    return;
+  }
+
+  const html = data.objections
+    .map((id) => objectionsMap[id])
+    .filter(Boolean)
+    .map(
+      (o) => `
+        <div class="objection-card">
+          <strong>${o.label}</strong>
+          <p>${(o.script || []).join(" ")}</p>
+        </div>
+      `
+    )
+    .join("");
+
+  objectionPanelBodyEl.innerHTML = html;
+  activeObjectionId = data.objections[0];
 }
 
 function handleObjectionClick(objectionId) {
@@ -449,49 +393,21 @@ function handleObjectionClick(objectionId) {
     el.classList.toggle("active", el.dataset.objectionId === objectionId);
   });
 
-  const obj = objectionsData.find((o) => o.id === objectionId);
+  const obj = objectionsMap[objectionId];
   if (!obj) return;
 
   objectionLabelEl.textContent = obj.label;
-  renderObjectionDetail(obj);
-}
-
-function renderObjectionDetail(obj) {
-  objectionDetailEl.innerHTML = "";
 
   const parts = [];
-
-  if (obj.script) {
+  if (obj.script && obj.script.length) {
     parts.push(
       `<div class="coach-section">
          <div class="coach-section-title">Core Handling Script</div>
-         <div class="coach-section-body">${obj.script}</div>
+         <div class="coach-section-body">${obj.script.join(" ")}</div>
        </div>`
     );
   }
 
-  if (obj.bullets && obj.bullets.length) {
-    const items = obj.bullets.map((b) => `<li>${b}</li>`).join("");
-    parts.push(
-      `<div class="coach-section">
-         <div class="coach-section-title">Key Points</div>
-         <div class="coach-section-body">
-           <ul>${items}</ul>
-         </div>
-       </div>`
-    );
-  }
-
-  if (obj.notes) {
-    parts.push(
-      `<div class="coach-section">
-         <div class="coach-section-title">Notes</div>
-         <div class="coach-section-body">${obj.notes}</div>
-       </div>`
-    );
-  }
-
-  objectionDetailEl.innerHTML =
-    parts.join("") ||
+  objectionDetailEl.innerHTML = parts.join("") ||
     '<div class="coach-placeholder">No details yet. Add them in data/objections.json.</div>';
 }
